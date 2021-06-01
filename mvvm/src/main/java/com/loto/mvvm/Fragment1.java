@@ -23,7 +23,6 @@ public class Fragment1 extends Fragment {
 
     private String TAG = "Fragment1";
 
-    @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -36,7 +35,7 @@ public class Fragment1 extends Fragment {
         myViewModel.getProgress().observe(getActivity(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                Log.d(TAG, "onChanged: "+integer);
+                Log.d(TAG, "onChanged: " + integer);
                 seekBar.setProgress(integer);
             }
         });

@@ -22,7 +22,6 @@ public class Fragment2 extends Fragment {
 
     private String TAG = "Fragment2";
 
-    @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -31,7 +30,7 @@ public class Fragment2 extends Fragment {
 
         SeekBar seekBar = view.findViewById(R.id.seek2);
 
-        MyViewModel myViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())).get(MyViewModel.class);
+        MyViewModel myViewModel = new ViewModelProvider(getActivity(), new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())).get(MyViewModel.class);
 
         myViewModel.getProgress().observe(getActivity(), new Observer<Integer>() {
             @Override
