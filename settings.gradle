@@ -2,3 +2,6 @@ rootProject.name = "JetpackStudy"
 include ':app'
 include ':lifecycle'
 include ':mvvm'
+include ':databinding'
+include ':databinding2'
+include ':recyclerview'

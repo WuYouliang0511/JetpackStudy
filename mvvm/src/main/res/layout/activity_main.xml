@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.loto.mvvm.MyViewModel" />
+
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -13,6 +17,12 @@
         android:gravity="center|top"
         android:orientation="vertical"
         tools:ignore="HardcodedText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(viewModel.aaa)}"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/text"

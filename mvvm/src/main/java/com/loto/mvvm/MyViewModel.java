@@ -13,6 +13,8 @@ public class MyViewModel extends ViewModel {
 
     public int number;
 
+    public MutableLiveData<Integer> aaa;
+
     private MutableLiveData<Integer> currentSecond;
 
     public MutableLiveData<Integer> getCurrentSecond() {
@@ -32,5 +34,13 @@ public class MyViewModel extends ViewModel {
             progress.setValue(0);
         }
         return progress;
+    }
+
+    public MutableLiveData<Integer> getAaa() {
+        if (aaa == null) {
+            aaa = new MutableLiveData<>();
+            aaa.setValue(0);
+        }
+        return aaa;
     }
 }

@@ -19,11 +19,11 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
+    String TAG = "MainActivity";
+
     private MyViewModel myViewModel;
     private ActivityMainBinding binding;
-
     private int a;
-
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -43,17 +43,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-//
-//        myViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(MyViewModel.class);
-//        binding.text.setText(String.valueOf(myViewModel.number));
-//
-//        myViewModel.getCurrentSecond().observe(this, new Observer<Integer>() {
-//            @Override
-//            public void onChanged(Integer integer) {
-//                binding.text.setText(String.valueOf(integer));
-//            }
-//        });
+
+        //LiveData想要实现双向绑定功能，必须要加
+        binding.setLifecycleOwner(this);
+
+        myViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(MyViewModel.class);
+        binding.text.setText(String.valueOf(myViewModel.number));
+        binding.setViewModel(myViewModel);
+        myViewModel.getCurrentSecond().observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                binding.text.setText(String.valueOf(integer));
+            }
+        });
 //        start();
+
+        Fragment1 fragment1 = (Fragment1) getSupportFragmentManager().findFragmentById(R.id.fragment1);
+        Fragment2 fragment2 = (Fragment2) getSupportFragmentManager().findFragmentById(R.id.fragment2);
+
+
+        if (fragment1.myViewModel.equals(fragment2.myViewModel)) {
+            Log.d(TAG, "fragment1.myViewModel == fragment2.myViewModel");
+        }
     }
 
     private void start() {
@@ -68,5 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void add(View view) {
         binding.text.setText(String.valueOf(++myViewModel.number));
+        myViewModel.getAaa().setValue(myViewModel.getAaa().getValue() + 1);
     }
 }
