@@ -16,6 +16,8 @@
             <option value="$PROJECT_DIR$/lifecycle" />
             <option value="$PROJECT_DIR$/mvvm" />
             <option value="$PROJECT_DIR$/recyclerview" />
+            <option value="$PROJECT_DIR$/room" />
+            <option value="$PROJECT_DIR$/room_viewmodel_livedata" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
