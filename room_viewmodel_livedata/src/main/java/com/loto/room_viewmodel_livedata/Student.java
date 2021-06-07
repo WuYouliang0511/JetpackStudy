@@ -24,6 +24,9 @@ public class Student {
     @ColumnInfo(name = "age", typeAffinity = ColumnInfo.INTEGER)
     private int age;
 
+    @ColumnInfo(name = "sex", typeAffinity = ColumnInfo.INTEGER)
+    private int sex;
+
     public Student(int id, String name, int age) {
         this.id = id;
         this.name = name;
@@ -41,6 +44,7 @@ public class Student {
     public Student(int id) {
         this.id = id;
     }
+
 
     public int getId() {
         return id;
@@ -64,5 +68,13 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
     }
 }

@@ -12,7 +12,7 @@ import com.loto.room_viewmodel_livedata.task.InsertStudentTask;
 
 public class StudentRepository {
 
-    private StudentDao studentDao;
+    private final StudentDao studentDao;
 
     public StudentRepository(Context context) {
         MyDataBase dataBase = MyDataBase.getInstance(context);
@@ -24,18 +24,23 @@ public class StudentRepository {
         task.execute(student);
     }
 
-//    @Delete
-//    void delete(Student... student);
-//
-//    @Query("DELETE FROM student")
-//    void deleteAll(Student... student);
-//
-//    @Update
-//    void update(Student... student);
-//
-//    @Query("SELECT * FROM student")
-//    List<Student> getAll();
-//
-//    @Query("SELECT * FROM student WHERE id = :id")
-//    List<Student> getById(int id);
+    public void delete(Student... students) {
+
+    }
+
+    public void deleteAll() {
+
+    }
+
+    public void update(Student... students) {
+
+    }
+
+    public void getAll() {
+
+    }
+
+    public void getById(int id) {
+
+    }
 }

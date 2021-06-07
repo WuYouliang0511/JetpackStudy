@@ -10,6 +10,7 @@ import androidx.lifecycle.AndroidViewModel;
  * @CreateDate: 2021/6/2 下午5:41
  * @Company LotoGram
  */
+
 public class MyViewModel extends AndroidViewModel {
 
     private StudentRepository repository;
@@ -21,6 +22,6 @@ public class MyViewModel extends AndroidViewModel {
     }
 
     public void insertStudent(Student... students) {
-        repository.insertStudent(students);
+        repository.insert(students);
     }
 }
