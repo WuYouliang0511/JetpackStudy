@@ -27,6 +27,10 @@
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit" />
-        <deepLink app:uri="http://47.102.137.211/{params}" />
+        <deepLink
+            android:autoVerify="true"
+            app:action="android.intent.action.VIEW"
+            app:mimeType="type/subtype"
+            app:uri="http://47.102.137.211/{params}" />
     </fragment>
 </navigation>

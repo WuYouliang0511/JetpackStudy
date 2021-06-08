@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/room" />
             <option value="$PROJECT_DIR$/room_viewmodel_livedata" />
+            <option value="$PROJECT_DIR$/workmanager" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

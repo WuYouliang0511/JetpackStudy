@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,12 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+
+        WebView webView = view.findViewById(R.id.web);
+
+        webView.getSettings().setJavaScriptEnabled(true);
+//        webView.loadUrl("http://10.0.1.183:52331/test.html");
+        webView.loadUrl("file:///android_asset/test.html");
 
         return view;
     }

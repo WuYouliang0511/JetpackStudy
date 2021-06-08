@@ -2,26 +2,41 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.loto.navigationdeeplink">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JetpackStudy">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.JetpackStudy"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
-                <!--                <data-->
-                <!--                    android:host="jarka.cn"-->
-                <!--                    android:path="/aaaaa"-->
-                <!--                    android:scheme="http" />-->
             </intent-filter>
+
             <nav-graph android:value="@navigation/navigation" />
         </activity>
-    </application>
 
+        <activity android:name="com.loto.navigationdeeplink.MainActivity2">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="47.102.137.211"
+                    android:pathPrefix="/get_data.xml"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+    </application>
 </manifest>
